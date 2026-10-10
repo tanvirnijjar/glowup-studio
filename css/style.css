@@ -1,0 +1,639 @@
+
+/* ==============================
+   GLOWUP STUDIO
+   Premium Beauty Salon Website
+================================= */
+
+/* 1. Design System */
+:root {
+    --cream: #fbf7f2;
+    --ivory: #fffdf9;
+    --beige: #eee2d5;
+    --rose: #c58f87;
+    --rose-dark: #a66e67;
+    --gold: #b79a70;
+    --brown: #493b35;
+    --muted: #81736b;
+    --white: #ffffff;
+    --border: #e9ded4;
+    --shadow: 0 18px 45px rgba(73, 59, 53, 0.09);
+}
+
+/* 2. Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    background: var(--ivory);
+    color: var(--brown);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* 3. Announcement Bar */
+.announcement-bar {
+    padding: 9px 15px;
+    background: var(--brown);
+    color: var(--white);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+/* 4. Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 19px 0;
+    background: rgba(255, 253, 249, 0.96);
+    border-bottom: 1px solid rgba(233, 222, 212, 0.8);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-brand,
+.footer-brand {
+    color: var(--brown);
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.navbar-brand span,
+.footer-brand span {
+    color: var(--rose-dark);
+}
+
+.navbar-nav {
+    gap: 10px;
+}
+
+.nav-link {
+    color: var(--brown);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--rose-dark);
+}
+
+.btn-book {
+    padding: 11px 20px;
+    border: 1px solid var(--brown);
+    border-radius: 3px;
+    color: var(--brown);
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+    background: var(--brown);
+    color: var(--white);
+}
+
+/* 5. Hero Section */
+.hero-section {
+    padding: 85px 0 100px;
+    background:
+        radial-gradient(
+            circle at 5% 20%,
+            rgba(238, 226, 213, 0.55),
+            transparent 35%
+        ),
+        var(--cream);
+}
+
+.eyebrow {
+    margin-bottom: 17px;
+    color: var(--rose-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.hero-section h1,
+.section-title {
+    margin-bottom: 24px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+}
+
+.hero-section h1 {
+    font-size: clamp(48px, 5.6vw, 76px);
+}
+
+.hero-section h1 span,
+.section-title span {
+    color: var(--rose-dark);
+    font-style: italic;
+}
+
+.hero-description,
+.section-description {
+    max-width: 510px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn-primary-custom,
+.btn-outline-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 23px;
+    border: 1px solid var(--brown);
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom {
+    background: var(--brown);
+    color: var(--white);
+}
+
+.btn-primary-custom:hover {
+    border-color: var(--rose-dark);
+    background: var(--rose-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--brown);
+}
+
+.btn-outline-custom:hover {
+    background: var(--beige);
+    color: var(--brown);
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.hero-note span {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    max-width: 520px;
+    margin-left: auto;
+    padding: 0 15px 15px 0;
+}
+
+.hero-image-wrapper::before {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 25px;
+    border: 1px solid var(--gold);
+    content: "";
+}
+
+.hero-image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 490px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: var(--shadow);
+}
+
+.floating-card {
+    position: absolute;
+    right: -5px;
+    bottom: 35px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 22px;
+    background: var(--ivory);
+    box-shadow: var(--shadow);
+}
+
+.floating-icon {
+    color: var(--gold);
+    font-size: 27px;
+}
+
+.floating-card strong {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+}
+
+.floating-card p {
+    margin: 3px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* 6. About Section */
+.about-section {
+    background: var(--ivory);
+}
+
+.section-heading,
+.about-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(34px, 4vw, 49px);
+}
+
+.section-description {
+    font-size: 13px;
+}
+
+.about-section .section-description {
+    max-width: 700px;
+}
+
+/* 7. Services */
+.services-section {
+    background: var(--cream);
+}
+
+.service-card {
+    height: 100%;
+    padding: 38px 30px;
+    border: 1px solid var(--border);
+    background: var(--ivory);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--rose);
+    box-shadow: var(--shadow);
+}
+
+.service-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 23px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--beige);
+    color: var(--rose-dark);
+    font-size: 24px;
+}
+
+.service-card h3 {
+    margin-bottom: 14px;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.service-card p {
+    min-height: 78px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.service-link {
+    color: var(--rose-dark);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.service-link:hover {
+    color: var(--brown);
+}
+
+/* 8. Gallery */
+.gallery-section {
+    background: var(--ivory);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-section .col-6,
+.gallery-section .col-12 {
+    overflow: hidden;
+}
+
+.gallery-section .col-6:hover .gallery-image,
+.gallery-section .col-12:hover .gallery-image {
+    transform: scale(1.04);
+}
+
+/* 9. Booking */
+.booking-section {
+    position: relative;
+    background: var(--beige);
+}
+
+.booking-section .section-description {
+    max-width: 530px;
+}
+
+.booking-section .section-title {
+    margin-bottom: 20px;
+}
+
+/* 10. Contact */
+.contact-section {
+    background: var(--cream);
+}
+
+.contact-card {
+    padding: 35px;
+    border: 1px solid var(--border);
+    background: var(--ivory);
+}
+
+.contact-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+}
+
+.contact-card p {
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* 11. Footer */
+.site-footer {
+    padding: 28px 0;
+    background: var(--brown);
+    color: var(--white);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-brand {
+    color: var(--white);
+    font-size: 23px;
+}
+
+.footer-brand span {
+    color: #e2b5ac;
+}
+
+.footer-content p {
+    margin: 0;
+    color: #e1d8d1;
+    font-size: 11px;
+    text-align: center;
+}
+
+.footer-link {
+    color: var(--white);
+    font-size: 11px;
+}
+
+/* 12. Responsive Design */
+@media (max-width: 991px) {
+    .navbar-nav {
+        align-items: stretch !important;
+        gap: 3px;
+        padding-top: 18px;
+    }
+
+    .navbar-nav .btn-book {
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    .hero-section {
+        padding: 65px 0 75px;
+    }
+
+    .hero-image {
+        height: 420px;
+    }
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+    .gallery-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 575px) {
+    .announcement-bar {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+    }
+
+    .navbar {
+        padding: 13px 0;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .hero-section {
+        padding: 48px 0 65px;
+    }
+
+    .hero-section h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .floating-card {
+        right: 0;
+        bottom: 25px;
+        padding: 12px 14px;
+    }
+
+    .floating-card strong {
+        font-size: 12px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .service-card {
+        padding: 30px 24px;
+    }
+
+    .service-card p {
+        min-height: auto;
+    }
+
+    .gallery-image {
+        height: 210px;
+    }
+
+    .contact-card {
+        padding: 25px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* 13. Accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==============================
+   APPOINTMENT BOOKING FORM
+================================= */
+
+.booking-card {
+    max-width: 850px;
+    padding: 40px;
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.form-label {
+    margin-bottom: 8px;
+    color: var(--brown);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background-color: var(--white);
+    color: var(--brown);
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+}
+
+textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 3px rgba(197, 143, 135, 0.15);
+}
+
+.booking-disclaimer {
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+.booking-message {
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    background: var(--cream);
+    color: var(--brown);
+    font-size: 13px;
+}
+
+@media (max-width: 575px) {
+    .booking-card {
+        padding: 24px 18px;
+    }
+}
